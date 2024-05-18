@@ -80,7 +80,7 @@ const SignUp: React.FC = () => {
                     <InputLabel htmlFor="standard-adornment-password">Password</InputLabel>
                     <Input
                         id="standard-adornment-password"
-                        {...register('password', { required: 'Password is required', minLength: { value: 6, message: 'Password must be at least 6 characters' } })}
+                        {...register('password', { required: 'Password is required', minLength: { value: 8, message: 'Password must be at least 6 characters' }, pattern: {value: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/, message: 'Password must contain minimum one uppercase English letter, minimum one lowercase English letter, at least one special character (#?!@$%^&*-), at least one digit'} })}
                         type={showPassword ? 'text' : 'password'}
                         endAdornment={
                             <InputAdornment position="end">
